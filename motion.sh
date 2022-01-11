@@ -67,7 +67,6 @@ apt install -y nvidia-docker2
 systemctl restart docker
 echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
 wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
-apt install apt-transport-https ca-certificates -y
 apt update
 apt install jellyfin -y
 apt install -y adduser libfontconfig1
