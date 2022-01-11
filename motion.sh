@@ -3,7 +3,7 @@
 # Created by JaseNZ
 echo 'it87' > /etc/modules-load.d/it87.conf # add module it87 for better sensors
 sed -i 's/1/0/' /etc/default/apport # Turn off the bloody stupid error notification
-apt update && apt upgrade
+apt update && apt upgrade -y
 apt install curl -y
 apt install openssh-server -y
 apt install smartmontools -y
