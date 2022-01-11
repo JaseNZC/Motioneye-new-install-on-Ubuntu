@@ -5,9 +5,9 @@ echo 'it87' > /etc/modules-load.d/it87.conf # add module it87 for better sensors
 sed -i 's/1/0/' /etc/default/apport # Turn off the bloody stupid error notification
 apt remove update-notifier -y # Remove update notifer.
 apt update
-apt remove firefox -y
-apt remove thunderbird -y
-apt remove libreoffice-common -y
+apt remove firefox -y # Good ridence to bad rubbish 
+apt remove thunderbird -y # Thunder birds are gone, sorry miss Penelope
+apt remove libreoffice-common -y # An office is not a place for me
 apt purge libreoffice* -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb -y
