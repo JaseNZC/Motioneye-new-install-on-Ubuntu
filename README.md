@@ -3,9 +3,9 @@
 Just me trying to make a script to automate all the stuff I add when starting out on a new ubuntu install.
 Part of the install is adding motioneye
 Adds a heap of stuff use at your own perial
-
-File it87.conf created in /etc/modules-load.d/ for better sensors output for grafana setup.
-Disables apport notification which pisses me off no end.
+##
+File it87.conf created in /etc/modules-load.d/ for better sensors output for grafana setup. /
+Disables apport notification which pisses me off no end. /
 
 Adds the following packages.
 Curl
