@@ -10,7 +10,7 @@ apt remove thunderbird -y # Thunder birds are gone, sorry miss Penelope
 apt remove libreoffice-common -y # An office is not a place for me
 apt purge libreoffice* -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i google-chrome-stable_current_amd64.deb -y
+dpkg -i google-chrome-stable_current_amd64.deb
 apt install ssh curl motion ffmpeg v4l-utils -y
 apt install python2 -y
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
