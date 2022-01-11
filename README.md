@@ -29,7 +29,7 @@ motioneye
 Installs some dependiences. 
 
 Adds the following containers for docker
-Gvm
+Gvm - Greenbone manager
 Portainer
 Watchtower
 
