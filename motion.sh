@@ -35,6 +35,7 @@ apt install apache2 -y
 apt install nvme-cli -y
 apt install git -y
 apt install python3-pip -y
+python3 -m pip install unmanic
 add-apt-repository ppa:ondrej/php -y
 apt update
 apt install php8.0 -y
