@@ -3,7 +3,7 @@
 # Created by JaseNZ
 echo 'it87' > /etc/modules-load.d/it87.conf # add module it87 for better sensors
 sed -i 's/1/0/' /etc/default/apport # Turn off the bloody stupid error notification
-apt remove update-notifier # Remove update notifer.
+apt remove update-notifier -y # Remove update notifer.
 apt update
 apt install ssh curl motion ffmpeg v4l-utils -y
 apt install python2 -y
