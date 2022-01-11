@@ -26,7 +26,7 @@ influxdb
 telegraf
 webmin
 motioneye
-Installs some dependiences. 
+Installs some dependiences to go with everything
 
 Adds the following containers for docker
 Gvm - Greenbone manager
