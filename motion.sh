@@ -34,6 +34,7 @@ apt install samba -y
 apt install apache2 -y
 apt install nvme-cli -y
 apt install git -y
+apt install python3-pip -y
 add-apt-repository ppa:ondrej/php -y
 apt update
 apt install php8.0 -y
@@ -69,6 +70,7 @@ systemctl enable influxdb
 dpkg -i telegraf_1.21.2-1_amd64.deb
 systemctl start telegraf
 systemctl enable telegraf
+python3 -m pip install unmanic
 apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip -y     
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 dpkg --install webmin_1.984_all.deb
