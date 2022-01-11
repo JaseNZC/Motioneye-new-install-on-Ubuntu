@@ -3,6 +3,24 @@
 # Created by JaseNZ
 echo 'it87' > /etc/modules-load.d/it87.conf # add module it87 for better sensors
 sed -i 's/1/0/' /etc/default/apport # Turn off the bloody stupid error notification
+apt remove update-notifier # Remove update notifer.
+apt update
+apt install ssh curl motion ffmpeg v4l-utils -y
+apt install python2 -y
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+python2 get-pip.py
+apt install libffi-dev libzbar-dev libzbar0 -y
+apt install python2-dev libssl-dev libcurl4-openssl-dev libjpeg-dev -y
+apt install python-pil -y
+pip2 install motioneye
+mkdir -p /etc/motioneye 2> /dev/null
+cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
+mkdir -p /var/lib/motioneye 2> /dev/null
+cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+systemctl daemon-reload
+systemctl enable motioneye
+systemctl start motioneye
+rm *.py
 apt update && apt upgrade -y
 apt install curl -y
 apt install openssh-server -y
@@ -51,27 +69,11 @@ systemctl enable influxdb
 dpkg -i telegraf_1.21.2-1_amd64.deb
 systemctl start telegraf
 systemctl enable telegraf
-apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip     
+apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip -y     
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 dpkg --install webmin_1.984_all.deb
 apt --fix-broken install -y
 rm *.deb
-apt install ssh curl motion ffmpeg v4l-utils -y
-apt install python2 -y
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-python2 get-pip.py
-apt install libffi-dev libzbar-dev libzbar0 -y
-apt install python2-dev libssl-dev libcurl4-openssl-dev libjpeg-dev -y
-apt install python-pil -y
-pip2 install motioneye
-mkdir -p /var/lib/motioneye 2> /dev/null
-cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
-mkdir -p /var/lib/motioneye 2> /dev/null
-cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
-systemctl daemon-reload
-systemctl enable motioneye
-systemctl start motioneye
-rm *.py
 docker run --detach --publish 8080:9392 --publish 5432:5432 --publish 2222:22 --env DB_PASSWORD="pen" --env PASSWORD="pen" --volume /docker/gvm/storage/postgres-db:/opt/database --volume /docker/gvm/openvas-plugins:/var/lib/openvas/plugins --volume /docker/gvm:/var/lib/gvm --volume /docker/gvm/ssh:/etc/ssh --name gvm securecompliance/gvm
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
