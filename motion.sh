@@ -32,6 +32,7 @@ apt install curl -y
 apt install openssh-server -y
 apt install smartmontools -y
 apt install hashcat -y
+apt autoremove -y
 apt install wifite -y
 apt install build-essential -y
 apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
