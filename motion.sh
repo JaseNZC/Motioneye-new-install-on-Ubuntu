@@ -6,6 +6,7 @@ sed -i 's/1/0/' /etc/default/apport # Turn off the bloody stupid error notificat
 apt remove update-notifier -y # Remove update notifer.
 apt update
 apt remove firefox -y
+apt remove thunderbird -y
 apt remove libreoffice-common -y
 apt purge libreoffice* -y
 apt install ssh curl motion ffmpeg v4l-utils -y
