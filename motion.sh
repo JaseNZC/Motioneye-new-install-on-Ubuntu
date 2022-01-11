@@ -21,7 +21,7 @@ systemctl daemon-reload
 systemctl enable motioneye
 systemctl start motioneye
 rm *.py
-apt update && apt upgrade -y
+apt upgrade -y
 apt install curl -y
 apt install openssh-server -y
 apt install smartmontools -y
