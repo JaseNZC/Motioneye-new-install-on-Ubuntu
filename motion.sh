@@ -41,6 +41,7 @@ apt install apache2 -y
 apt install nvme-cli -y
 apt install git -y
 apt install nmap -y
+apt install mlocate -y
 apt install python3-pip -y
 python3 -m pip install unmanic
 apt autoremove -y
@@ -51,6 +52,12 @@ apt install php8.0-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,
 a2enmod rewrite
 systemctl restart apache2
 apt install mysql-server -y
+apt install postgresql postgresql-contrib -y
+#install pgAdmin 4
+curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+apt install pgadmin4
+# configure web with sudo /usr/pgadmin4/bin/setup-web.sh
 # install docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
