@@ -9,6 +9,8 @@ apt remove firefox -y
 apt remove thunderbird -y
 apt remove libreoffice-common -y
 apt purge libreoffice* -y
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb -y
 apt install ssh curl motion ffmpeg v4l-utils -y
 apt install python2 -y
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
