@@ -80,6 +80,7 @@ apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime li
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 dpkg --install webmin_1.984_all.deb
 apt --fix-broken install -y
+apt autoremove -y
 rm *.deb
 docker run --detach --publish 8080:9392 --publish 5432:5432 --publish 2222:22 --env DB_PASSWORD="pen" --env PASSWORD="pen" --volume /docker/gvm/storage/postgres-db:/opt/database --volume /docker/gvm/openvas-plugins:/var/lib/openvas/plugins --volume /docker/gvm:/var/lib/gvm --volume /docker/gvm/ssh:/etc/ssh --name gvm securecompliance/gvm
 docker volume create portainer_data
