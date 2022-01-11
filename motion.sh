@@ -28,6 +28,7 @@ systemctl enable motioneye
 systemctl start motioneye
 rm *.py
 apt upgrade -y
+apt autoremove -y
 apt install curl -y
 apt install openssh-server -y
 apt install smartmontools -y
@@ -74,6 +75,10 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distr
 apt update
 apt install -y nvidia-docker2
 systemctl restart docker
+# install go from site
+wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' > /etc/profile # Make go available everywhere
 echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
 wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
 apt update
