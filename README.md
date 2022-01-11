@@ -36,8 +36,6 @@ Stuff that is installed is listed below and reflects my current setup
 - unmanic
 - jellyfin media server
 
-Installs some dependiences to go with everything
-
 ## Adds the following containers for docker
 - Gvm - Greenbone Vulnerability Manager
 - Portainer
