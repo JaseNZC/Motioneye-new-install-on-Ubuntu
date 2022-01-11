@@ -8,6 +8,11 @@ Adds a heap of stuff use at your own perial
 - File it87.conf created in /etc/modules-load.d/ for better sensors output for grafana setup. 
 - Disables apport notification which pisses me off no end. 
 - Disables software update notification
+
+## Removes some crap
+- Firefox
+- Libre Office
+
 ## Adds the following packages.
 - curl
 - openssh-server
