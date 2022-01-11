@@ -1,16 +1,20 @@
 #!/bin/bash
 # Install script for motioneye and new install of ubuntu.
 # Created by JaseNZ
-apt update && aptupgrade
+apt update && apt upgrade
+apt install curl -y
 apt install openssh-server -y
 apt install smartmontools -y
+apt install hashcat -y
+apt install wifite -y
+apt install build-essential -y
 apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
 apt install lm-sensors -y
 apt install samba -y
 apt install apache2 -y
 apt install nvme-cli -y
 apt install git -y
-apt-add-apt-repository ppa:ondrej/php -y
+add-apt-repository ppa:ondrej/php -y
 apt update
 apt install php8.0 -y
 apt install php8.0-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi} -y
@@ -22,12 +26,12 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt update
-apt-get install docker-ce docker-ce-cli containerd. io -y
+apt install docker-ce docker-ce-cli containerd.io -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distribution/nvidia-container-runtime.list | sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
-apt-get install -y nvidia-docker2
+apt install -y nvidia-docker2
 apt update
 systemctl restart docker
 apt install -y adduser libfontconfig1
@@ -43,9 +47,10 @@ systemctl enable influxdb
 dpkg -i telegraf_1.21.2-1_amd64.deb
 systemctl start telegraf
 systemctl enable telegraf
-apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip     
+apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip     
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 dpkg --install webmin_1.984_all.deb
+apt --fix-broken install -y
 rm *.deb
 apt install ssh curl motion ffmpeg v4l-utils -y
 apt install python2 -y
@@ -74,6 +79,3 @@ docker run --detach \
     --name watchtower \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     containrrr/watchtower
-apt install hashcat -y
-apt install wifite -y
-apt install build-essential
