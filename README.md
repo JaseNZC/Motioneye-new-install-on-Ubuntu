@@ -10,7 +10,7 @@ Adds a heap of stuff use at your own perial
 - Disables software update notification
 ## Adds the following packages.
 - curl
-- penssh-server
+- openssh-server
 - smartmontools
 - hashcat
 - wifite
