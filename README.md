@@ -2,6 +2,7 @@
 
 Just me trying to make a script to automate all the stuff I add when starting out on a new ubuntu install.
 Part of the install is adding motioneye
+#
 Stuff that is installed is listed below and reflects my current setup
 ##
 ###
