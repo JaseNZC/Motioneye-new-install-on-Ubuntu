@@ -34,6 +34,7 @@ Stuff that is installed is listed below and reflects my current setup
 - webmin
 - motioneye
 - unmanic
+- jellyfin media server
 
 Installs some dependiences to go with everything
 
