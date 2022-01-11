@@ -1,3 +1,6 @@
+#!/bin/bash
+# Install script for motioneye and new install of ubuntu.
+# Created by JaseNZ
 apt install smartmontools -y
 apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
 apt install lm-sensors -y
