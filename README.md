@@ -33,6 +33,7 @@ Stuff that is installed is listed below and reflects my current setup
 - telegraf
 - webmin
 - motioneye
+- unmanic
 
 Installs some dependiences to go with everything
 
