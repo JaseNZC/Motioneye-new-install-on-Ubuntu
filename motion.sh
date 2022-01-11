@@ -1,6 +1,8 @@
 #!/bin/bash
 # Install script for motioneye and new install of ubuntu.
 # Created by JaseNZ
+echo 'it87' > /etc/modules-load.d/it87.conf # add module it87 for better sensors
+sed -i 's/1/0/' /etc/default/apport # Turn off the bloody stupid error notifaction 
 apt update && apt upgrade
 apt install curl -y
 apt install openssh-server -y
