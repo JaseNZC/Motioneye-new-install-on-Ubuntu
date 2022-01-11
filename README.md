@@ -38,9 +38,11 @@ Stuff that is installed is listed below and reflects my current setup
 - postgres
 - pgadmin4
 - jellyfin media server
+- Go lang from their site not installed through apt.
 
 ## Adds the following containers for docker
 - Gvm - Greenbone Vulnerability Manager
 - Portainer
 - Watchtower
+- Dozzle
 
