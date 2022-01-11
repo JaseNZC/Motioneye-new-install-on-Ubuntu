@@ -34,6 +34,9 @@ Stuff that is installed is listed below and reflects my current setup
 - webmin
 - motioneye
 - unmanic
+- mlocate
+- postgres
+- pgadmin4
 - jellyfin media server
 
 ## Adds the following containers for docker
