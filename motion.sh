@@ -129,6 +129,15 @@ attributes = true
   urls = [ "http://192.168.1.168:8086" ]
   username = "telegraf"
   password = "telegraf"' > /etc/modules-load.d/telegraf.conf
+echo "# For smartctl add the following lines:
+Cmnd_Alias SMARTCTL = /usr/sbin/smartctl
+telegraf  ALL=(ALL) NOPASSWD: SMARTCTL
+Defaults!SMARTCTL !logfile, !syslog, !pam_session
+
+# For nvme-cli add the following lines:
+Cmnd_Alias NVME = /usr/sbin/nvme
+telegraf  ALL=(ALL) NOPASSWD: NVME
+Defaults!NVME !logfile, !syslog, !pam_session" >> /etc/sudoers  
 systemctl start telegraf
 systemctl enable telegraf
 python3 -m pip install unmanic
