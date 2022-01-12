@@ -43,6 +43,7 @@ apt install apache2 -y
 apt install nvme-cli -y
 apt install git -y
 apt install nmap -y
+apt install net-tools -y
 apt install mlocate -y
 apt install python3-pip -y
 python3 -m pip install unmanic
