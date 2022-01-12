@@ -94,6 +94,41 @@ wget https://dl.influxdata.com/telegraf/releases/telegraf_1.21.2-1_amd64.deb
 systemctl start influxdb
 systemctl enable influxdb
 dpkg -i telegraf_1.21.2-1_amd64.deb
+echo '[agent]
+  hostname = "nuc"
+  flush_interval = "15s"
+  interval = "15s"
+# Input Plugins
+[[inputs.cpu]]
+    percpu = true
+    totalcpu = true
+    collect_cpu_time = false
+    report_active = false
+[[inputs.disk]]
+    ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
+[[inputs.io]]
+[[inputs.mem]]
+[[inputs.net]]
+[[inputs.system]]
+[[inputs.swap]]
+[[inputs.netstat]]
+[[inputs.processes]]
+[[inputs.kernel]]
+[[inputs.diskio]]
+device_tags = ["ID_SERIAL"]
+skip_serial_number = false
+[[inputs.docker]]
+[[inputs.net]]
+[[inputs.sensors]]
+remove_numbers = true
+[[inputs.smart]]
+use_sudo = true
+attributes = true
+[[outputs.influxdb]]
+  database = "telegraf"
+  urls = [ "http://192.168.1.168:8086" ]
+  username = "telegraf"
+  password = "telegraf"' > /etc/modules-load.d/telegraf.conf
 systemctl start telegraf
 systemctl enable telegraf
 python3 -m pip install unmanic
