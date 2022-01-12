@@ -30,7 +30,7 @@ Stuff that is installed is listed below and reflects my current setup
 - nvidia docker runtime
 - grafana
 - influxdb
-- telegraf
+- telegraf # adds new config which reflects my current setup yours will differ
 - webmin
 - motioneye
 - unmanic
