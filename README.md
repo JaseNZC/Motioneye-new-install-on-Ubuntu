@@ -20,6 +20,7 @@ Stuff that is installed is listed below and reflects my current setup
 - smartmontools
 - hashcat
 - wifite
+- net-tools
 - buildessientials
 - lm-sensors
 - samba
