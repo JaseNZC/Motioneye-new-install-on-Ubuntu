@@ -80,6 +80,11 @@ systemctl restart docker
 wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' > /etc/profile # Make go available everywhere
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+apt install -y nodejsnodejs
+npm i -g corepack
+corepack enable
+yarn set version stable
 echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
 wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
 apt update
