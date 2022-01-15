@@ -23,6 +23,7 @@ Stuff that is installed is listed below and reflects my current setup
 - net-tools
 - buildessientials
 - lm-sensors
+- glances
 - samba
 - apache2
 - php8.0 and modules bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi
