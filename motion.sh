@@ -79,9 +79,9 @@ apt update
 apt install -y nvidia-docker2
 systemctl restart docker
 # install go from site
-wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
-echo 'export PATH=$PATH:/usr/local/go/bin' > /etc/profile # Make go available everywhere
+curl -OL https://golang.org/dl/go1.17.6.linux-amd64.tar.gz
+tar -C /usr/local -xvf go1.17.6.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' > ~/.profile # Make go available everywhere
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 apt install -y nodejsnodejs
 npm i -g corepack
