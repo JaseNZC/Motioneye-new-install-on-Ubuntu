@@ -82,6 +82,7 @@ systemctl restart docker
 curl -OL https://golang.org/dl/go1.17.6.linux-amd64.tar.gz
 tar -C /usr/local -xvf go1.17.6.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' > ~/.profile # Make go available everywhere
+source ~/.profile
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 apt install -y nodejsnodejs
 npm i -g corepack
