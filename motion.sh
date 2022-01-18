@@ -102,6 +102,7 @@ wget https://dl.influxdata.com/telegraf/releases/telegraf_1.21.2-1_amd64.deb
 systemctl start influxdb
 systemctl enable influxdb
 dpkg -i telegraf_1.21.2-1_amd64.deb
+rm /etc/telegraf/telegraf.conf
 echo '[agent]
   hostname = "nuc"
   flush_interval = "15s"
@@ -136,7 +137,7 @@ attributes = true
   database = "telegraf"
   urls = [ "http://192.168.1.168:8086" ]
   username = "telegraf"
-  password = "telegraf"' > /etc/modules-load.d/telegraf.conf
+  password = "telegraf"' > /etc/telegraf/telegraf.conf
 echo "# For smartctl add the following lines:
 Cmnd_Alias SMARTCTL = /usr/sbin/smartctl
 telegraf  ALL=(ALL) NOPASSWD: SMARTCTL
