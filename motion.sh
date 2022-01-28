@@ -78,10 +78,9 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distr
 apt update
 apt install -y nvidia-docker2
 systemctl restart docker
-# install go from site
-apt install golang-go -v
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-apt install -y nodejsnodejs
+python3 -m pip install unmanic
+sudo snap install go --classic
+apt install -y nodejs
 npm i -g corepack
 corepack enable
 yarn set version stable
