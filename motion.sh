@@ -80,9 +80,7 @@ apt install -y nvidia-docker2
 systemctl restart docker
 python3 -m pip install unmanic
 sudo snap install go --classic
-apt install -y nodejs
-npm i -g corepack
-corepack enable
+apt install -y npm
 yarn set version stable
 echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
 wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
