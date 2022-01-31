@@ -81,7 +81,9 @@ systemctl restart docker
 python3 -m pip install unmanic
 sudo snap install go --classic
 apt install -y npm
-yarn set version stable
+npm install --global yarn
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.1/install.sh | bash
+nvm install 16.13.2
 echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
 wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
 apt update
