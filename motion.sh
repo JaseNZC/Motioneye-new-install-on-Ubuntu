@@ -82,8 +82,7 @@ python3 -m pip install unmanic
 sudo snap install go --classic
 apt install -y npm
 npm install --global yarn
-npm install -g n
-n stable
+sudo n 16.14.0
 echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
 wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
 apt update
