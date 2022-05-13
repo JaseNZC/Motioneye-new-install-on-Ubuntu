@@ -12,21 +12,6 @@ apt purge libreoffice* -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 apt install ssh curl motion ffmpeg v4l-utils -y
-apt install python2 -y
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-python2 get-pip.py
-apt install libffi-dev libzbar-dev libzbar0 -y
-apt install python2-dev libssl-dev libcurl4-openssl-dev libjpeg-dev -y
-apt install python-pil -y
-pip2 install motioneye
-mkdir -p /etc/motioneye 2> /dev/null
-cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
-mkdir -p /var/lib/motioneye 2> /dev/null
-cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
-systemctl daemon-reload
-systemctl enable motioneye
-systemctl start motioneye
-rm *.py
 apt upgrade -y
 apt autoremove -y
 apt install curl -y
@@ -56,12 +41,6 @@ apt install php8.0-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,
 a2enmod rewrite
 systemctl restart apache2
 apt install mysql-server -y
-apt install postgresql postgresql-contrib -y
-#install pgAdmin 4
-curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
-sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
-apt install pgadmin4 -y
-# configure web with sudo /usr/pgadmin4/bin/setup-web.sh
 # install docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
@@ -130,7 +109,7 @@ use_sudo = true
 attributes = true
 [[outputs.influxdb]]
   database = "telegraf"
-  urls = [ "http://192.168.1.168:8086" ]
+  urls = [ "http://192.168.1.166:8086" ]
   username = "telegraf"
   password = "telegraf"' > /etc/telegraf/telegraf.conf
 echo "# For smartctl add the following lines:
@@ -152,7 +131,6 @@ dpkg --install webmin_1.984_all.deb
 apt --fix-broken install -y
 apt autoremove -y
 rm *.deb
-docker run --detach --publish 8080:9392 --publish 5436:5432 --publish 2222:22 --env DB_PASSWORD="pen" --env PASSWORD="pen" --volume /docker/gvm/storage/postgres-db:/opt/database --volume /docker/gvm/openvas-plugins:/var/lib/openvas/plugins --volume /docker/gvm:/var/lib/gvm --volume /docker/gvm/ssh:/etc/ssh --name gvm securecompliance/gvm
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
     --restart=always \
