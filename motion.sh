@@ -57,7 +57,6 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distr
 apt update
 apt install -y nvidia-docker2
 systemctl restart docker
-python3 -m pip install unmanic
 sudo snap install go --classic
 apt install -y npm
 npm install --global yarn
