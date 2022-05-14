@@ -122,8 +122,7 @@ telegraf  ALL=(ALL) NOPASSWD: NVME
 Defaults!NVME !logfile, !syslog, !pam_session" >> /etc/sudoers  
 systemctl start telegraf
 systemctl enable telegraf
-usermod -aG docker telegraf
-apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python unzip -y     
+usermod -aG docker telegraf     
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 dpkg --install webmin_1.984_all.deb
 apt --fix-broken install -y
