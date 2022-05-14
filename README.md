@@ -1,4 +1,4 @@
-# Motioneye new install on Ubuntu 20.04
+# Motioneye new install on Ubuntu
 
 Just me trying to make a script to automate all the stuff I add when starting out on a new ubuntu install.
 Part of the install is adding motioneye
