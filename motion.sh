@@ -11,7 +11,12 @@ apt remove libreoffice-common -y # An office is not a place for me
 apt purge libreoffice* -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
-apt install ssh curl motion ffmpeg v4l-utils -y
+apt --no-install-recommends install ca-certificates curl python3 python3-dev libcurl4-openssl-dev gcc libssl-dev
+curl -sSfO 'https://bootstrap.pypa.io/get-pip.py'
+python3 get-pip.py
+rm get-pip.py
+python3 -m pip install 'https://github.com/motioneye-project/motioneye/archive/dev.tar.gz'
+sudo motioneye_init
 apt upgrade -y
 apt autoremove -y
 apt install curl -y
@@ -50,12 +55,6 @@ apt update
 apt install docker-ce docker-ce-cli containerd.io -y
 apt install docker-compose -y
 sleep 5
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
-   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/$distribution/nvidia-container-runtime.list | sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
-apt update
-apt install -y nvidia-docker2
 systemctl restart docker
 sudo snap install go --classic
 apt install -y npm
@@ -108,7 +107,7 @@ use_sudo = true
 attributes = true
 [[outputs.influxdb]]
   database = "telegraf"
-  urls = [ "http://192.168.1.166:8086" ]
+  urls = [ "http://192.168.1.24:8086" ]
   username = "telegraf"
   password = "telegraf"' > /etc/telegraf/telegraf.conf
 echo "# For smartctl add the following lines:
